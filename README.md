@@ -82,7 +82,7 @@ app.use(expressTracking({corrHandler: customCorrHandler}));
 It is recommended to use this express middleware in combination with:
 
 * [express-domaining](https://github.com/telefonicaid/node-express-domaining). Express middleware to automatically create and destroy a [domain](https://nodejs.org/api/domain.html).
-* [express-logging](https://github.com/telefonicaid/node-express-logging). Express middleware to log, using [logops](https://github.com/telefonicaid/logops) library, each request and response.
+* [express-logging](https://github.com/telefonicaid/node-express-logging). Express middleware to log each request and response.
 
 ```js
 var express = require('express'),
@@ -96,15 +96,22 @@ logger.getContext = function() {
 };
 
 var app = express();
-app.use(expressDomain());
-app.use(expressTracking());
-app.use(expressLogging());
+app.use(expressDomain(logger));
+app.use(expressTracking({op: 'test'}));
+app.use(expressLogging(logger));
 
 app.get('/test', function(req, res) {
   res.status(200).send();
 });
 
 app.listen(3000);
+```
+
+After launching the previous server, each HTTP request generates 2 log entries to trace the request and response:
+
+```
+time=2015-06-25T14:34:55.847Z | lvl=INFO | corr=0ad79e44-95e9-48fe-aa17-19773ebe9056 | trans=0ad79e44-95e9-48fe-aa17-19773ebe9056 | op=test | msg=Request from ::1: GET /test
+time=2015-06-25T14:34:55.848Z | lvl=INFO | corr=0ad79e44-95e9-48fe-aa17-19773ebe9056 | trans=0ad79e44-95e9-48fe-aa17-19773ebe9056 | op=test | msg=Response with status 200 in 1 ms.
 ```
 
 ## License

@@ -84,7 +84,7 @@ describe('Tracking Middleware Tests', function() {
     var res = new Response();
     trackingMiddleware(req, res, function() {
       expect(process.domain.tracking).to.be.deep.equal({
-        op: null,
+        op: undefined,
         trans: '123456789',
         corr: '123456789'
       });
@@ -111,7 +111,7 @@ describe('Tracking Middleware Tests', function() {
     var trackingMiddleware = new TrackingMiddleware();
     trackingMiddleware(req, res, function() {
       expect(process.domain.tracking).to.be.deep.equal({
-        op: null,
+        op: undefined,
         trans: '123456789',
         corr: 'test-correlator'
       });
@@ -124,7 +124,7 @@ describe('Tracking Middleware Tests', function() {
     var trackingMiddleware = new TrackingMiddleware({corrHeader: 'Corr'});
     trackingMiddleware(req, res, function() {
       expect(process.domain.tracking).to.be.deep.equal({
-        op: null,
+        op: undefined,
         trans: '123456789',
         corr: 'test-correlator-2'
       });
@@ -137,7 +137,7 @@ describe('Tracking Middleware Tests', function() {
     var trackingMiddleware = new TrackingMiddleware({isJwt: true});
     trackingMiddleware(req, res, function() {
       expect(process.domain.tracking).to.be.deep.equal({
-        op: null,
+        op: undefined,
         trans: '123456789',
         corr: 'correlator'
       });
@@ -154,7 +154,7 @@ describe('Tracking Middleware Tests', function() {
     var trackingMiddleware = new TrackingMiddleware({corrHandler: corrHandlerGenerator});
     trackingMiddleware(req, res, function() {
       expect(process.domain.tracking).to.be.deep.equal({
-        op: null,
+        op: undefined,
         trans: '123456789',
         corr: 'correlator'
       });
