@@ -81,8 +81,8 @@ app.use(expressTracking({corrHandler: customCorrHandler}));
 
 It is recommended to use this express middleware in combination with:
 
-* [express-domaining](https://github.com/telefonicaid/node-express-domaining). Express middleware to automatically create and destroy a [domain](https://nodejs.org/api/domain.html).
-* [express-logging](https://github.com/telefonicaid/node-express-logging). Express middleware to log each request and response.
+* [express-domaining](https://github.com/telefonica/node-express-domaining). Express middleware to automatically create and destroy a [domain](https://nodejs.org/api/domain.html).
+* [express-logging](https://github.com/telefonica/node-express-logging). Express middleware to log each request and response.
 
 ```js
 var express = require('express'),
