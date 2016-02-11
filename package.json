@@ -1,7 +1,7 @@
 {
   "name": "express-tracking",
   "description": "Express middleware to track request/response with a correlator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "author": {
     "name": "Jorge Lorenzo Gallardo",
@@ -43,7 +43,7 @@
   "dependencies": {
     "on-headers": "^1.0.0",
     "node-uuid": "^1.4.2",
-    "jwt-utils": "^1.0.0"
+    "jwt-utils": "^1.0.3"
   },
   "keywords": [
     "domain",
