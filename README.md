@@ -114,6 +114,14 @@ time=2015-06-25T14:34:55.847Z | lvl=INFO | corr=0ad79e44-95e9-48fe-aa17-19773ebe
 time=2015-06-25T14:34:55.848Z | lvl=INFO | corr=0ad79e44-95e9-48fe-aa17-19773ebe9056 | trans=0ad79e44-95e9-48fe-aa17-19773ebe9056 | op=test | msg=Response with status 200 in 1 ms.
 ```
 
+## Changelog:
+
+### v1.0.1 (11-02-2016)
+- Update Jwt Utils dependency
+
+### v1.0.0 (02-07-2015)
+- First version
+
 ## License
 
 Copyright 2015 [Telefónica Investigación y Desarrollo, S.A.U](http://www.tid.es)
