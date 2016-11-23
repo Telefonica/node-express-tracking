@@ -41,9 +41,9 @@
     "eslint": "^0.23.0"
   },
   "dependencies": {
+    "jwt-utils": "^1.0.3",
     "on-headers": "^1.0.0",
-    "node-uuid": "^1.4.2",
-    "jwt-utils": "^1.0.3"
+    "uuid": "^3.0.0"
   },
   "keywords": [
     "domain",
